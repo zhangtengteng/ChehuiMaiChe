@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<RadioGroup
+        android:id="@+id/tab_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb1"
+            style="@style/TabMenuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/selector_tabhost_pay"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center_horizontal" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            style="@style/TabMenuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/tab_time"
+            android:button="@null"
+            android:checked="false"
+            android:gravity="center"
+            android:text="一个月"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/rb3"
+            style="@style/TabMenuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/tab_message"
+            android:button="@null"
+            android:gravity="center_horizontal" />
+    </RadioGroup>
+</RelativeLayout>

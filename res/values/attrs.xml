@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="modify_info"> 
+
+        <item>修改姓名</item> 
+        <item>修改手机号</item> 
+        <item>修改emai</item> 
+        <item>修改城市</item>  
+        <item>修改品牌</item>  
+
+    </string-array> 
+    
+    <string-array name="order_time">
+         <item>全  部</item> 
+         <item>一星期</item> 
+         <item>一个月</item> 
+    </string-array>
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg" >
+
+    <include layout="@layout/top_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_user"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/corners_login_bg_down"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:text="@string/set_account_memory_card"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:padding="10dp"
+            android:id="@+id/tv_card_holder"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="right"
+            android:text="@string/set_account_wallet7_hint1"
+            android:textColor="@color/detail_gray"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_pwd"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/ll_user"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/corners_login_bg_up"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="left"
+            android:text="@string/set_account_withdrawal_amount"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:paddingRight="10dp"
+            android:id="@+id/tv_card_number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:gravity="right"
+            android:text="@string/set_account_wallet7_hint2"
+            android:textColor="@color/detail_gray"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_next5"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/ll_pwd"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corners_login_btn_bg"
+        android:text="@string/common_btn_finish"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</RelativeLayout>

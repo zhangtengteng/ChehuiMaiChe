@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg" >
+
+    <include layout="@layout/top_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_user"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/corners_bg"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_login_user_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/login_user_left" />
+
+        <com.chehui.diy.EditTextWithDel
+            android:id="@+id/et_phone"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/reg_user_name"
+            android:singleLine="true"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/iv_select"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/arrow_down"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_pwd"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/ll_user"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <com.chehui.diy.EditTextWithDel
+            android:id="@+id/et_code"
+            android:layout_width="160dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/corners_bg"
+            android:hint="@string/reg_user_code"
+            android:paddingLeft="10dp"
+            android:singleLine="true"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btn_send_code"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/reg_user_send_code"
+            android:background="@drawable/corners_bg_reg0_bule"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_next0"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/ll_pwd"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corners_login_btn_bg"
+        android:text="@string/reg_next"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</RelativeLayout>
