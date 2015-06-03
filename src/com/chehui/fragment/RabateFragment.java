@@ -38,8 +38,10 @@ import com.example.myproject.R;
  * @author zhangtengteng
  * 
  */
-public class RabateFragment extends BaseFragment implements OnRefreshListener,
-		OnLoadListener {
+public class RabateFragment extends BaseFragment
+		implements
+			OnRefreshListener,
+			OnLoadListener {
 	private boolean isRequesting;
 	private AutoListView autoListView;
 	private RabateAdapter adapter;
@@ -48,42 +50,43 @@ public class RabateFragment extends BaseFragment implements OnRefreshListener,
 		@Override
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
-			case CommonData.HTTP_HANDLE_FAILE:
-				if (msg.obj!= null) {
-					ToastUtils.showShortToast(getActivity()
-							.getApplicationContext(), msg.obj.toString());
-				} else {
-					ToastUtils.showShortToast(getActivity()
-							.getApplicationContext(), "服务器异常!");
-				}
+				case CommonData.HTTP_HANDLE_FAILE :
+					if (msg.obj != null) {
+						ToastUtils.showShortToast(getActivity()
+								.getApplicationContext(), msg.obj.toString());
+					} else {
+						ToastUtils.showShortToast(getActivity()
+								.getApplicationContext(), "服务器异常!");
+					}
 
-				break;
-			case CommonData.HTTP_HANDLE_SUCCESS:
-				break;
-			case AutoListView.REFRESH:
-				if (adapter == null) {
-					adapter = new RabateAdapter(tBusiness, getActivity());
-					autoListView.setAdapter(adapter);
-				}
-				autoListView.onRefreshComplete();
-				break;
-			case AutoListView.LOAD:
-				if (adapter == null) {
-					adapter = new RabateAdapter(tBusiness, getActivity());
-					autoListView.setAdapter(adapter);
-				}
-				autoListView.onLoadComplete();
-				break;
+					break;
+				case CommonData.HTTP_HANDLE_SUCCESS :
+					break;
+				case AutoListView.REFRESH :
+					if (adapter == null) {
+						adapter = new RabateAdapter(tBusiness, getActivity());
+						autoListView.setAdapter(adapter);
+					}
+					autoListView.onRefreshComplete();
+					break;
+				case AutoListView.LOAD :
+					if (adapter == null) {
+						adapter = new RabateAdapter(tBusiness, getActivity());
+						autoListView.setAdapter(adapter);
+					}
+					autoListView.onLoadComplete();
+					break;
 
-			case CommonData.HTTP_TIME_OUT:
-				dismissWaitDialog();
-				if (msg.obj != null) {
-					Integer type = Integer.valueOf(msg.obj.toString());
-					RequestTimeOutManager.getInstance().refushAutoListView(getActivity(), autoListView, adapter, type);
-				}
-				break;
-			default:
-				break;
+				case CommonData.HTTP_TIME_OUT :
+					dismissWaitDialog();
+					if (msg.obj != null) {
+						Integer type = Integer.valueOf(msg.obj.toString());
+						RequestTimeOutManager.getInstance().refushAutoListView(
+								getActivity(), autoListView, adapter, type);
+					}
+					break;
+				default :
+					break;
 			}
 			isRequesting = false;
 			autoListView.setResultSize(tBusiness.size());

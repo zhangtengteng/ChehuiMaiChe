@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/fgMessage"
-        android:name="com.chehui.fragment.RabateFragment"
+        android:name="com.chehui.fragment.RabateFragment2"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1.0" />

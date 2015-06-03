@@ -100,6 +100,7 @@
     <string name="set_account_city">所在地区</string>
     <string name="set_account_bland">所选品牌</string>
     <string name="set_account_add_bank_top">添加银行卡</string>
+    <string name="set_account_add_bank_top2">+银行卡</string>
     <string name="set_account_writer_bank_top">填写银行卡信息</string>
     
     

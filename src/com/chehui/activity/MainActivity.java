@@ -128,23 +128,27 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		case R.id.rbOrderCheck:
 			TAG = ORDER_CHECK;
 			title = R.string.main_order;
+			initTitleView(-1, 0, title, 255, -1, 0);
 			break;
 		case R.id.rbOrderCount:
 			TAG = ORDER_COUNT;
 			title = R.string.main_my_order;
+			initTitleView(-1, 0, title, 255, -1, 0);
 			break;
 		case R.id.rbMessage:
 			TAG = MESSAGE;
 			title = R.string.main_rebate;
+			initTitleView(-1, 0, title, 255,R.string.set_account_add_bank_top2,0);
 			break;
 		case R.id.rbSet:
 			TAG = SET;
 			title = R.string.main_set;
+			initTitleView(-1, 0, title, 255, -1, 0);
 			break;
 		default:
 			break;
 		}
-		initTitleView(-1, 0, title, 255, -1, 0);
+		
 		FragmentsManager.getInstance().changeFragment(TAG);
 	}
 
