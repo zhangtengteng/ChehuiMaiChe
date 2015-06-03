@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg" >
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
 
-    <include layout="@layout/top_title" />
+    <include
+        android:id="@+id/top"
+        layout="@layout/top_title" />
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/little_gray" />
     <!-- 姓名 -->
+
     <LinearLayout
         android:id="@+id/ll_user"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/corners_bg"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -45,17 +52,19 @@
             android:visibility="invisible" />
     </LinearLayout>
 
-   <!--  地区 -->
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/little_gray" />
+    <!-- 地区 -->
+
     <LinearLayout
         android:id="@+id/ll_location"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/ll_user"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="15dp"
         android:gravity="center"
-        android:background="@drawable/corners_bg"
         android:orientation="horizontal" >
 
         <ImageView
@@ -79,19 +88,21 @@
             android:layout_height="40dp"
             android:layout_weight="1"
             android:src="@drawable/arrow_down"
-            android:visibility="invisible" />
+             />
     </LinearLayout>
-    
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/little_gray" />
     <!-- 密码 -->
+
     <LinearLayout
         android:id="@+id/ll_pwd1"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/ll_location"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/corners_bg"
         android:gravity="center"
         android:orientation="horizontal" >
 
@@ -121,19 +132,22 @@
             android:visibility="invisible" />
     </LinearLayout>
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/little_gray" />
+
     <LinearLayout
         android:id="@+id/ll_pwd2"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/ll_pwd1"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/corners_bg"
         android:gravity="center"
         android:orientation="horizontal" >
 
         <ImageView
+            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -157,19 +171,21 @@
             android:visibility="invisible" />
     </LinearLayout>
 
-    
-	
-    
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/little_gray" />
+
     <Button
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:id="@+id/btn_next2"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/ll_pwd2"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/corners_login_btn_bg"
         android:text="@string/reg_next"
         android:textColor="@color/white"
         android:textSize="20sp" />
-</RelativeLayout>
+
+</LinearLayout>

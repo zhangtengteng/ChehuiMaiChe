@@ -1,16 +1,9 @@
 package com.chehui.activity;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.http.client.utils.URLEncodedUtils;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -30,7 +23,6 @@ import com.chehui.diy.PickerView.onSelectListener;
 import com.chehui.manage.comm.SharedPreManager;
 import com.chehui.manager.comm.RegisterManager;
 import com.chehui.ui.base.BaseActivity;
-import com.chehui.utils.StringUtils;
 import com.chehui.utils.ToastUtils;
 import com.chehui.webservice.manager.WebServiceManger;
 import com.example.myproject.R;

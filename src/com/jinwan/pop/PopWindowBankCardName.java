@@ -16,15 +16,15 @@ import com.chehui.diy.PickerView;
 import com.chehui.utils.LogN;
 import com.example.myproject.R;
 
-public class PopuWindwBankCardName {
+public class PopWindowBankCardName {
 
 	private PopupWindow pop;
 	private View popView;
-	private static volatile PopuWindwBankCardName instance;
+	private static volatile PopWindowBankCardName instance;
 
 	List<String> data = new ArrayList<String>();
 
-	private PopuWindwBankCardName() {
+	private PopWindowBankCardName() {
 	}
 
 	/**
@@ -32,9 +32,9 @@ public class PopuWindwBankCardName {
 	 * 
 	 * @return ActivityManager
 	 */
-	public static PopuWindwBankCardName getInstance() {
+	public static PopWindowBankCardName getInstance() {
 		if (instance == null) {
-			instance = new PopuWindwBankCardName();
+			instance = new PopWindowBankCardName();
 		}
 		return instance;
 	}
