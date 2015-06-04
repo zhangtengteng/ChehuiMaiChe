@@ -63,6 +63,11 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#ffffff</item>
     </style>
+    
+    <style name="order_detial_gray" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkgray</item>
+    </style>
 	
     <!-- auto listview -->
     <style name="customProgressBar" parent="@android:style/Widget.ProgressBar.Small">
