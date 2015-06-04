@@ -23,6 +23,7 @@
         android:textSize="15sp" />
 
     <TextView
+        android:id="@+id/tv_balance"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -31,7 +32,7 @@
         android:textColor="@color/red"
         android:textSize="30sp" />
 	<Button
-        android:id="@+id/btn_next2"
+        android:id="@+id/btn_balance"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="5dp"

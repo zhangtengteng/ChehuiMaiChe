@@ -1,5 +1,6 @@
 package com.chehui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -50,6 +51,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		// 获取FragmentManager实例
 		fMgr = getSupportFragmentManager();
 		FragmentsManager.getInstance().setFragmentManager(fMgr);
+		findViewById(R.id.rbOrderCheck).setSelected(true);
 		initFragment();
 		initTitleView(-1, 0, R.string.main_order, 255, -1, 0);
 		RequestTimeOutManager.getInstance().init(this);
@@ -89,7 +91,13 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 			right.setText("");
 		}
 		right.getBackground().setAlpha(rightAlpha);
-
+		right.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(MainActivity.this,ActivityManagerAccountAddBank1.class));
+			}
+		});
 	}
 
 	/**
@@ -120,7 +128,12 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 
 		FragmentsManager.getInstance().changeFragment(ORDER_CHECK);
 	}
-
+	
+	@Override
+	protected void onResumeFragments() {
+		super.onResumeFragments();
+		left.setVisibility(View.INVISIBLE);
+	}
 	@Override
 	public void onClick(View view) {
 

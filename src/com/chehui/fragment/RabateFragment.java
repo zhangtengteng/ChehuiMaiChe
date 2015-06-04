@@ -160,7 +160,7 @@ public class RabateFragment extends BaseFragment
 		});
 
 	}
-
+	
 	@Override
 	public void onLoad() {
 		getRabateRequest(AutoListView.LOAD);

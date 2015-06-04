@@ -1,79 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_bg" >
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
 
     <include layout="@layout/top_title" />
-
     <LinearLayout
-        android:id="@+id/ll_user"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_marginTop="120dp"
-        android:background="@drawable/corners_login_bg_down"
-        android:gravity="center_vertical"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:gravity="center"
-            android:text="@string/set_account_card_holder"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <EditText
-            android:background="@null"
-            android:id="@+id/et_card_holder"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="left|center_vertical"
-            android:hint="@string/set_account_card_holder"
-            android:textColor="@color/detail_gray"
-            android:textSize="15sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_bank_card"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/ll_user"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@drawable/corners_login_bg_up"
-        android:gravity="center_vertical"
-        android:orientation="horizontal" >
+        android:background="@drawable/corners_login_bg_down"
+        android:orientation="vertical" >
 
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:gravity="left"
-            android:text="@string/set_account_card_number"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <EditText
-            android:background="@null"
-            android:id="@+id/et_card_holder_number"
+        <LinearLayout
+            android:id="@+id/ll_user"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="left|center_vertical"
-            android:hint="@string/set_account_card_number"
-            android:textColor="@color/detail_gray"
-            android:textSize="15sp" />
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="@string/set_account_card_holder"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_card_holder"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:hint="@string/set_account_card_holder"
+                android:textColor="@color/detail_gray"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <include layout="@layout/hline" />
+
+        <LinearLayout
+            android:id="@+id/ll_bank_card"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/ll_user"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="left"
+                android:text="@string/set_account_card_number"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_card_holder_number"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@null"
+                android:gravity="left|center_vertical"
+                android:hint="@string/set_account_card_number"
+                android:textColor="@color/detail_gray"
+                android:textSize="15sp" />
+        </LinearLayout>
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_next_add_bank"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/ll_bank_card"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="20dp"
@@ -82,4 +90,4 @@
         android:textColor="@color/white"
         android:textSize="20sp" />
 
-</RelativeLayout>
+</LinearLayout>

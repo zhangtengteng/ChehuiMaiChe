@@ -154,14 +154,16 @@
     <string name="set_loginOut">退出当前账号</string>
 
     <!-- 公共 -->
+    
     <string name="common_abnormal_server">服务器异常&#8230;</string>
     <string name="common_request_more">查看更多&#8230;</string>
-    <string name="common_requesting">正在请求&#8230;</string>
+    <string name="common_request_no_title"></string>
+    <string name="common_requesting"></string>
     <string name="common_requesting_time_out">请求超时&#8230;</string>
-    <string name="common_querying">正在查询&#8230;</string>
+    <string name="common_querying"></string>
     <string name="common_buffering">正在缓冲&#8230;</string>
     <string name="common_loading">正在加载&#8230;</string>
-    <string name="common_logining">正在登录&#8230;</string>
+    <string name="common_logining"></string>
     <string name="common_sending">正在发送&#8230;</string>
     <string name="common_downloading">正在下载&#8230;</string>
     <string name="common_uploading">正在上传&#8230;</string>
