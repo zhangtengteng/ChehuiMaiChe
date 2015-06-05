@@ -37,15 +37,24 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Black.NoTitleBar" >
         <activity
-            android:name="com.chehui.activity.LoginActivity"
+            android:name="com.chehui.activity.LoadingActivity"
             android:launchMode="singleInstance" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.chehui.activity.LoginActivity"
+            android:launchMode="singleInstance" >
+        </activity>
         <activity android:name="com.chehui.activity.Reg0Activity" >
+        </activity>
+        <activity android:name="com.chehui.activity.ViewPager1Activity" >
+        </activity>
+        <activity android:name="com.chehui.activity.ViewPager2Activity" >
+        </activity>
+        <activity android:name="com.chehui.activity.ViewPager3Activity" >
         </activity>
         <activity android:name="com.chehui.activity.Reg1Activity" >
         </activity>
@@ -68,6 +77,8 @@
         <activity android:name="com.chehui.activity.MessageSetActivity" >
         </activity>
         <activity android:name="com.chehui.activity.OrderDetailActivity" >
+        </activity>
+        <activity android:name="com.chehui.activity.OrderDetailActivity2" >
         </activity>
         <activity android:name="com.chehui.activity.RabateDetailActivity" >
         </activity>

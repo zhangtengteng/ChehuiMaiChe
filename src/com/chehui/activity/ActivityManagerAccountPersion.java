@@ -56,8 +56,8 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 	private TextView modifyPhone;
 	private TextView modifyEmail;
 	private TextView modifyLocal;
-	private TextView modifiyBrand;	
-	
+	private TextView modifiyBrand;
+
 	private int brandId1;
 	private int brandId2;
 	private int brandId3;
@@ -73,7 +73,7 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 	private TextView textView1;
 	private TextView textView2;
 	private TextView textView3;
-	View childAt ;
+	View childAt;
 	String[] strs;
 	Builder builder;
 	AlertDialog builder2;
@@ -130,8 +130,9 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 	}
 
 	private void init() {
-		
-		childAt = ((ViewGroup)findViewById(android.R.id.content)).getChildAt(0);
+
+		childAt = ((ViewGroup) findViewById(android.R.id.content))
+				.getChildAt(0);
 		userName = (TextView) findViewById(R.id.tv_user_name);
 		userName.setText(SharedPreManager.getInstance().getString(
 				CommonData.USER_NAME, ""));
@@ -151,18 +152,17 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 		userBland1 = (TextView) findViewById(R.id.tv_user_bland1);
 		userBland1.setText(SharedPreManager.getInstance().getString(
 				CommonData.Bland1, "宝马"));
-//		RegisterManager.getInstance().setBland1(userBland1.getText().toString());
+		// RegisterManager.getInstance().setBland1(userBland1.getText().toString());
 
 		userBland2 = (TextView) findViewById(R.id.tv_user_bland2);
 		userBland2.setText(SharedPreManager.getInstance().getString(
 				CommonData.Bland2, "奥迪"));
-//		RegisterManager.getInstance().setBland1(userBland2.getText().toString());
-		
+		// RegisterManager.getInstance().setBland1(userBland2.getText().toString());
 
 		userBland3 = (TextView) findViewById(R.id.tv_user_bland3);
 		userBland3.setText(SharedPreManager.getInstance().getString(
 				CommonData.Bland3, "奔驰"));
-//		RegisterManager.getInstance().setBland1(userBland3.getText().toString());
+		// RegisterManager.getInstance().setBland1(userBland3.getText().toString());
 
 		modifyName = (TextView) findViewById(R.id.tv_modify_name);
 		modifyName.setOnClickListener(this);
@@ -195,7 +195,7 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 		case R.id.tv_modify_brand:
 			// showModifyDialog("修改");
 			showModifyDialog2(4);
-//			PoPModifyBrandManager.getInstance().showPopAllLocation(childAt,Gravity.CENTER_VERTICAL,0,0);
+			// PoPModifyBrandManager.getInstance().showPopAllLocation(childAt,Gravity.CENTER_VERTICAL,0,0);
 			flag = true;
 			break;
 		case R.id.tv_modify_email:
@@ -269,14 +269,14 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 		textView2 = (TextView) brandview.findViewById(R.id.tv_bland2);
 		textView3 = (TextView) brandview.findViewById(R.id.tv_bland3);
 
-//		if (builder2 == null) {
-//			builder2 = new AlertDialog.Builder(this).create();
-//		}
-//		builder2.setTitle(strs[type]);
-//		builder2.setIcon(android.R.drawable.ic_dialog_info);
-//		builder2.setView(brandview);
-//		builder2.show();
-		if(builder==null){
+		// if (builder2 == null) {
+		// builder2 = new AlertDialog.Builder(this).create();
+		// }
+		// builder2.setTitle(strs[type]);
+		// builder2.setIcon(android.R.drawable.ic_dialog_info);
+		// builder2.setView(brandview);
+		// builder2.show();
+		if (builder == null) {
 			builder = new AlertDialog.Builder(this);
 		}
 		builder.setTitle(strs[type]).setIcon(android.R.drawable.ic_dialog_info)
@@ -293,15 +293,21 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 						// message.obj = input;
 						// handler.sendMessage(message);
 						// }
-						
-						SharedPreManager.getInstance().setString(CommonData.Bland1, textView1.getText().toString());
-						SharedPreManager.getInstance().setString(CommonData.Bland2, textView2.getText().toString());
-						SharedPreManager.getInstance().setString(CommonData.Bland3, textView3.getText().toString());
-						
+
+						SharedPreManager.getInstance().setString(
+								CommonData.Bland1,
+								textView1.getText().toString());
+						SharedPreManager.getInstance().setString(
+								CommonData.Bland2,
+								textView2.getText().toString());
+						SharedPreManager.getInstance().setString(
+								CommonData.Bland3,
+								textView3.getText().toString());
+
 						userBland1.setText(textView1.getText().toString());
 						userBland2.setText(textView2.getText().toString());
 						userBland3.setText(textView3.getText().toString());
-				
+
 					}
 
 				}).setNegativeButton("取消", null).show();
@@ -335,11 +341,8 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 					ResultOfString sellerModify = WebServiceManger
 							.getInstance()
 							.getBaseInfoService()
-							.sellerModify(myId,
-									userPhone1,
-									userEmail1,
-									userCity1, "", "", brand1,
-									brand2,brand3);
+							.sellerModify(myId, userPhone1, userEmail1,
+									userCity1, "", "", brand1, brand2, brand3);
 					if (sellerModify.isSuccess()) {
 						message.what = 1001;
 					} else {
@@ -364,15 +367,13 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 				userEmail.getText().toString());
 		SharedPreManager.getInstance().setString(CommonData.USER_CITY,
 				userCity.getText().toString());
-//		 SharedPreManager.getInstance().setString(CommonData.Bland1,
-//		 tuser.getSELLBRAND1());
+		// SharedPreManager.getInstance().setString(CommonData.Bland1,
+		// tuser.getSELLBRAND1());
 		// SharedPreManager.getInstance().setString(CommonData.Bland2,
 		// tuser.getSELLBRAND2());
 		// SharedPreManager.getInstance().setString(CommonData.Bland3,
 		// tuser.getSELLBRAND3());
-		
-		
-		
+
 		flag = false;
 		ToastUtils.showShortToast(getApplicationContext(), "信息修改完成！");
 	}
@@ -410,10 +411,11 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 					}
 				});
 		setPopWidth();
-//		View childAt = ((ViewGroup)findViewById(android.R.id.content)).getChildAt(0);
-//		PoPBlandWindowManager.getInstance().showPopAllLocation(Bland3,
-//				Gravity.CENTER | Gravity.BOTTOM, 0, 0);
-		
+		// View childAt =
+		// ((ViewGroup)findViewById(android.R.id.content)).getChildAt(0);
+		// PoPBlandWindowManager.getInstance().showPopAllLocation(Bland3,
+		// Gravity.CENTER | Gravity.BOTTOM, 0, 0);
+
 		PoPBlandWindowManager.getInstance().showPopAsDropDown(brandview, 0, 0);
 	};
 
@@ -444,6 +446,7 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 		});
 
 	}
+
 	/***
 	 * 设置pop的宽度
 	 */
@@ -453,6 +456,7 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 		PoPBlandWindowManager.getInstance().init(getApplicationContext(),
 				width, 700, R.layout.pop_bland);
 	}
+
 	/***
 	 * 设置pop的宽度
 	 */
@@ -470,5 +474,5 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 		}
 		super.onPause();
 	}
-	
+
 }

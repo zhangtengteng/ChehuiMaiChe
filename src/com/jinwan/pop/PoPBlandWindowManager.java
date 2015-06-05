@@ -11,17 +11,11 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import chehui.maichetong.useroperationservice.ResultOfListOfTBrand;
-import chehui.maichetong.useroperationservice.TBrand;
-
-import com.chehui.comm.ExtractorThread;
+import chehui.maichetong.useroperationservice.*;
 import com.chehui.diy.PickerView;
 import com.chehui.diy.PickerView.onSelectListener;
-import com.chehui.ui.widget.dialog.WaitingAlertDialog;
 import com.chehui.utils.LogN;
-import com.chehui.webservice.manager.WebServiceManger;
 import com.example.myproject.R;
 
 public class PoPBlandWindowManager {

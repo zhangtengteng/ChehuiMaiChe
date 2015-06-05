@@ -19,6 +19,7 @@ import chehui.maichetong.selleroperationservice.ResultOfListOfTOrder;
 import chehui.maichetong.selleroperationservice.TOrder;
 
 import com.chehui.activity.OrderDetailActivity;
+import com.chehui.activity.OrderDetailActivity2;
 import com.chehui.adapter.OrderAdapter;
 import com.chehui.autolistview.widget.AutoListView;
 import com.chehui.autolistview.widget.AutoListView.OnLoadListener;
@@ -154,7 +155,7 @@ public class OrderCheckFragment extends BaseFragment implements
 			 
 //			String str=orderDetail.getState()+"|"+orderDetail.getDdbh()+"|"+orderDetail.get
 
-			 Intent intent = new Intent(getActivity().getApplicationContext(),OrderDetailActivity.class);
+			 Intent intent = new Intent(getActivity().getApplicationContext(),OrderDetailActivity2.class);
 			 intent.putExtra("orderDetail", (Serializable) orderDetail);
 			 startActivity(intent);
 			 

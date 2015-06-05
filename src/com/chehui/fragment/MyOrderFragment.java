@@ -21,10 +21,7 @@ import android.widget.TextView;
 import com.chehu.pop.PoPTimeManager;
 import com.chehui.activity.ViewPageOneActivity;
 import com.chehui.adapter.MyPagerAdapter;
-import com.chehui.autolistview.widget.AutoListView.OnLoadListener;
-import com.chehui.autolistview.widget.AutoListView.OnRefreshListener;
 import com.chehui.ui.base.BaseFragment;
-import com.chehui.utils.ToastUtils;
 import com.example.myproject.R;
 
 public class MyOrderFragment extends BaseFragment implements OnClickListener {

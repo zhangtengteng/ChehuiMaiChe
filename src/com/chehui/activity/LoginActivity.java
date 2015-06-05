@@ -92,6 +92,11 @@ public class LoginActivity extends BaseActivity {
 
 	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		initTitleView(-1, 0, R.string.login, 255, R.string.reg, 0);
+	}
 	/**
 	 * 没有在onCreate方法中调用initWedget()，而是在onWindowFocusChanged方法中调用，
 	 * 是因为initWedget()中需要获取PopupWindow浮动下拉框依附的组件宽度，在onCreate方法中是无法获取到该宽度的
@@ -195,7 +200,7 @@ public class LoginActivity extends BaseActivity {
 							.getBaseInfoService()
 							.sellerLoginByTel(
 									username.getText().toString().trim(),
-									pwd.getText().toString().trim(), "");
+									pwd.getText().toString().trim(), "","","");
 					Message message = new Message();
 					if (sellerLoginByName.isSuccess()) {
 						message.what = CommonData.HTTP_HANDLE_SUCCESS;

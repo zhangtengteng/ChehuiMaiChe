@@ -36,14 +36,13 @@
                 android:textSize="15sp" />
             <TextView
                 android:background="@color/red"
-                android:layout_alignParentRight="true"
                 android:id="@+id/tv_order_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
                 android:text="未报价"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 

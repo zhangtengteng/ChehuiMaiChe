@@ -83,7 +83,7 @@ public class Reg4Activity extends BaseActivity {
 						.getBaseInfoService()
 						.sellerLoginByTel(
 								RegisterManager.getInstance().getTel(),
-								RegisterManager.getInstance().getPassWord(), "");
+								RegisterManager.getInstance().getPassWord(), "","","");
 				Message message = new Message();
 				if (userLoginByName.isSuccess()) {
 					message.what = CommonData.HTTP_HANDLE_SUCCESS;

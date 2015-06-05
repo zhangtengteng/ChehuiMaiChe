@@ -12,6 +12,7 @@
         android:layout_height="wrap_content" >
 
         <LinearLayout
+            android:paddingTop="10dp"
             android:layout_width="fill_parent"
             android:layout_height="80dp"
             android:orientation="vertical" >
@@ -36,6 +37,7 @@
                     android:paddingLeft="10dp" >
 
                     <TextView
+                        android:id="@+id/tv_order_detial_number"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:text="订单号：1212112"
@@ -43,6 +45,7 @@
                         android:textSize="12sp" />
 
                     <TextView
+                        android:id="@+id/tv_top_title"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
@@ -81,11 +84,12 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/tv_order_detial_city"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="酒红色"
+                    android:text="南京"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
@@ -94,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="酒红色"
+                    android:text="全款"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -138,7 +142,8 @@
             <include layout="@layout/hline" />
             <!-- 3 -->
 
-            <View android:layout_marginTop="15dp" />
+            <View android:layout_marginTop="15dp" android:layout_width="fill_parent"
+                android:layout_height="1dp"/>
 
             <include layout="@layout/hline" />
 
@@ -167,9 +172,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="3.70"
+                    android:layout_weight="1"
                     android:ellipsize="end"
-                    android:maxLength="30"
                     android:singleLine="true"
                     android:text="便宜点吧"
                     android:textColor="@color/darkgray" />
@@ -184,7 +188,7 @@
 
             <!-- 4 -->
 
-            <View android:layout_marginTop="15dp" />
+            <View android:layout_marginTop="15dp" android:layout_width="fill_parent" android:layout_height="1dp"/>
 
             <include layout="@layout/hline" />
 
@@ -233,6 +237,7 @@
                     android:text="￥" />
 
                 <TextView
+                    android:id="@+id/tv_order_detial_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -266,6 +271,7 @@
                     android:text="+	￥" />
 
                 <TextView
+                    android:id="@+id/tv_order_detial_InsurancePrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -491,6 +497,7 @@
             <!-- 历史报价 -->
 
             <LinearLayout
+                android:layout_marginBottom="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
