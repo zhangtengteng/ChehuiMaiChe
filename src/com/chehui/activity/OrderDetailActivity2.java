@@ -10,6 +10,7 @@ import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import chehui.maichetong.selleroperationservice.ResultOfListOfTOrder;
@@ -35,9 +36,9 @@ public class OrderDetailActivity2 extends BaseActivity {
 	private TextView tvTopTitle;
 	private TextView tvState;
 	private TextView tvNumber;
-	private TextView tvPrice;
+	private EditText tvPrice;
 	private TextView tvCity;
-	private TextView tvInsurancePrice;
+	private EditText tvInsurancePrice;
 	private TextView tvPhone;
 	private TextView tvIntroduction;
 	private TextView tvPayTime;
@@ -117,10 +118,10 @@ public class OrderDetailActivity2 extends BaseActivity {
 		tvNumber.setText(order.getDdbh());
 
 		//保险
-		tvInsurancePrice = (TextView) findViewById(R.id.tv_order_detial_InsurancePrice);
+		tvInsurancePrice = (EditText) findViewById(R.id.tv_order_detial_InsurancePrice);
 		tvInsurancePrice.setText(order.getExpectPrice());
 		//车辆价格
-		tvPrice = (TextView) findViewById(R.id.tv_order_detial_price);
+		tvPrice = (EditText) findViewById(R.id.tv_order_detial_price);
 		tvPrice.setText(order.getInsurancePrice());
 		//
 //		tvPhone = (TextView) findViewById(R.id.tv_order_detial_phone);
@@ -133,6 +134,17 @@ public class OrderDetailActivity2 extends BaseActivity {
 		tvCity = (TextView) findViewById(R.id.tv_order_detial_city);
 		tvCity.setText(order.getCityname());
 		
+		
+		Button baojia = (Button) findViewById(R.id.btn_baojia);
+		baojia.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				 activityManager.getInstance().startNextActivity(
+				 ActivityOrderDetailOk.class);
+				 OrderDetailActivity2.this.finish();
+			}
+		});
 //		btn = (Button) findViewById(R.id.btn_check);
 //		btn.setOnClickListener(new OnClickListener() {
 //			@Override

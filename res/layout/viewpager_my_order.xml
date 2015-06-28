@@ -15,16 +15,17 @@
         android:orientation="horizontal" >
 
         <RadioButton
+            android:checked="true"
             android:id="@+id/rb1"
             style="@style/TabMenuText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@null"
+            android:background="@drawable/selector_tabhost_all"
             android:button="@null"
-            android:drawableTop="@drawable/selector_tabhost_pay"
-            android:checked="true"
-            android:gravity="center_horizontal" />
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
 
         <RadioButton
             android:id="@+id/rb2"
@@ -32,13 +33,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/tab_time"
+            android:background="@null"
             android:button="@null"
-            android:checked="false"
-            android:gravity="center"
-            android:text="全部"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:drawableTop="@drawable/selector_tabhost_pay"
+            android:gravity="center_horizontal" />
 
         <RadioButton
             android:id="@+id/rb3"
@@ -47,8 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:drawableTop="@drawable/selector_tabhost_consume"
             android:button="@null"
+            android:drawableTop="@drawable/selector_tabhost_consume"
             android:gravity="center_horizontal" />
     </RadioGroup>
 

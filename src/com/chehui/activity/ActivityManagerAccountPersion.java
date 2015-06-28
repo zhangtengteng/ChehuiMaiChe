@@ -428,11 +428,11 @@ public class ActivityManagerAccountPersion extends BaseActivity implements
 
 			@Override
 			public void run() {
-				ResultOfListOfTBrand brandName = WebServiceManger.getInstance()
-						.getUserOperationService().getBrandName();
+				 ResultOfListOfTBrand allBrandName = WebServiceManger.getInstance()
+						.getUserOperationService().getALLBrandName();
 
-				if (brandName.isSuccess()) {
-					tBrand = brandName.getData().getTBrand();
+				if (allBrandName.isSuccess()) {
+					tBrand = allBrandName.getData().getTBrand();
 					for (int i = 0; i < tBrand.size(); i++) {
 						data.add(tBrand.get(i).getBrandName());
 						brands.put(tBrand.get(i).getBrandName(), tBrand.get(i)

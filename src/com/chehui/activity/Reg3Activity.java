@@ -204,7 +204,7 @@ public class Reg3Activity extends BaseActivity implements OnClickListener {
 					@Override
 					public void onSelect(String text) {
 						view.setText(text);
-						Integer brandId = (Integer) brands.get(text);
+						Integer brandId = Integer.valueOf(brands.get(text).toString());
 						if (i == 1) {
 							RegisterManager.getInstance().setBland1(
 									brandId + "");
@@ -236,9 +236,10 @@ public class Reg3Activity extends BaseActivity implements OnClickListener {
 			@Override
 			public void run() {
 				try {
+					
 					ResultOfListOfTBrand brandName = WebServiceManger
 							.getInstance().getUserOperationService()
-							.getBrandName();
+							.getALLBrandName();
 					if (brandName.isSuccess()) {
 						tBrand = brandName.getData().getTBrand();
 						for (int i = 0; i < tBrand.size(); i++) {

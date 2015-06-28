@@ -76,14 +76,13 @@ public class XunJiaActivity extends BaseActivity {
 		submit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				addQuete();
+				//addQuete();
 			}
 		});
 	}
 
 	/***
 	 * 添加我的询价
-	 */
 	private void addQuete() {
 		// sellerID 用户id
 		// carID
@@ -134,5 +133,6 @@ public class XunJiaActivity extends BaseActivity {
 		});
 
 	}
+	 */
 
 }

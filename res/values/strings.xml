@@ -39,6 +39,7 @@
     <string name="xunjia_yufu">预付价格：</string>
     <string name="xunjia_fuzeng">请添加附赠商品：</string>
     
+    
     <!-- main -->
     <string name="main_order">询价订单</string>
     <string name="main_my_order">我的询价</string>
@@ -93,7 +94,7 @@
 
     <!-- 账号管理 -->
     <string name="set_account_persion">个人信息</string>
-    <string name="set_account_money">我的钱包</string>
+    <string name="set_account_money">商家认证</string>
     <string name="set_account_name">姓名</string>
     <string name="set_account_phone">手机号</string>
     <string name="set_account_email">邮箱号</string>

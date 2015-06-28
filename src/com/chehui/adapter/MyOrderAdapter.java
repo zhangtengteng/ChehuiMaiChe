@@ -1,5 +1,6 @@
 package com.chehui.adapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
@@ -14,23 +15,49 @@ import chehui.maichetong.selleroperationservice.TQuote;
 
 import com.chehui.afinal.FinalBitmap;
 import com.example.myproject.R;
+
 /**
  * 我的报价adapter
+ * 
  * @author zhangtengteng
- *
+ * 
  */
 public class MyOrderAdapter extends BaseAdapter implements OnClickListener {
-	private List<TQuote> tQuotes;
+	// 0 all ; 1 isok ;2 waitok;
+	private int state;
+	private List<TQuote> tQuotes = new ArrayList<TQuote>();
 	private Context context;
 	private LayoutInflater inflater;
 	FinalBitmap finalBitmap;
 	ViewHolder holder = null;
-	public MyOrderAdapter(List<TQuote> tuanSigns, Context context) {
+
+	public MyOrderAdapter(List<TQuote> tuanSigns, Context context, int state) {
 		super();
-		this.tQuotes = tuanSigns;
+		this.state = state;
+		filterDatas(tuanSigns);
 		this.context = context;
 		inflater = LayoutInflater.from(context);
 		finalBitmap = FinalBitmap.create(context);
+	}
+
+	private void filterDatas(List<TQuote> tuanSigns) {
+		tQuotes.clear();
+		if(state==0){
+			tQuotes=tuanSigns;
+			return;
+		}
+		for (TQuote t : tuanSigns) {
+			if (state == 1) {
+				if (t.isIsUserPay()) {
+					tQuotes.add(t);
+				}
+			} else if (state == 2) {
+				if (!t.isIsUserPay()) {
+					tQuotes.add(t);
+				}
+			} 
+		}
+
 	}
 
 	@Override
@@ -56,6 +83,8 @@ public class MyOrderAdapter extends BaseAdapter implements OnClickListener {
 					null);
 			holder = new ViewHolder();
 			holder.icon = (ImageView) convertView.findViewById(R.id.iv_icon);
+			holder.state = (ImageView) convertView
+					.findViewById(R.id.tv_order_state);
 			holder.title = (TextView) convertView
 					.findViewById(R.id.tv_order_title);
 			holder.expectPrice = (TextView) convertView
@@ -65,16 +94,26 @@ public class MyOrderAdapter extends BaseAdapter implements OnClickListener {
 			holder.orderTime = (TextView) convertView
 					.findViewById(R.id.tv_order_time);
 		}
-		
-		holder.expectPrice.setText(tQuote.getLicensePrice());
+		holder.expectPrice.setText("裸车价：￥"+tQuote.getFloorPrice()+"元");
 		holder.title.setText(tQuote.getCarDetail());
-		if(tQuote.getBegindateStr()!=null){
+		if (tQuote.getBegindateStr() != null) {
 			holder.orderTime.setText(tQuote.getBegindateStr());
-		}else{
+		} else {
 			holder.orderTime.setText("。。。");
 		}
+
+		if (tQuote.isIsUserPay()) {
+			holder.state.setBackground(context.getResources().getDrawable(
+					R.drawable.isok));
+		} else {
+			holder.state.setBackground(context.getResources().getDrawable(
+					R.drawable.wait_ok));
+		}
+		
+		holder.orderNumber.setText("您的返利：￥300元");
 		return convertView;
 	}
+
 	@Override
 	public void onClick(View v) {
 
@@ -87,5 +126,6 @@ public class MyOrderAdapter extends BaseAdapter implements OnClickListener {
 		public TextView expectPrice;
 		public TextView orderNumber;
 		public TextView orderTime;
+		public ImageView state;
 	}
 }

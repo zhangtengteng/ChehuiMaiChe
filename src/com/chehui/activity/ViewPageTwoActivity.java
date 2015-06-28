@@ -1,7 +1,7 @@
 package com.chehui.activity;
 
 /****
- * 我的订单页面  one
+ * 我的订单页面  two
  */
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,7 +28,7 @@ import com.chehui.utils.ToastUtils;
 import com.chehui.webservice.manager.WebServiceManger;
 import com.example.myproject.R;
 
-public class ViewPageOneActivity extends BaseActivity implements
+public class ViewPageTwoActivity extends BaseActivity implements
 		OnRefreshListener, OnLoadListener {
 	private boolean flag;
 	private AutoListView lstv;
@@ -53,7 +53,7 @@ public class ViewPageOneActivity extends BaseActivity implements
 			case AutoListView.REFRESH:
 				if (adapter == null) {
 					adapter = new MyOrderAdapter(tQuotes,
-							getApplicationContext(),0);
+							getApplicationContext(),1);
 					lstv.setAdapter(adapter);
 				}
 				lstv.onRefreshComplete();
@@ -61,7 +61,7 @@ public class ViewPageOneActivity extends BaseActivity implements
 			case AutoListView.LOAD:
 				if (adapter == null) {
 					adapter = new MyOrderAdapter(tQuotes,
-							getApplicationContext(),0);
+							getApplicationContext(),1);
 					lstv.setAdapter(adapter);
 				}
 				lstv.onLoadComplete();
@@ -143,7 +143,7 @@ public class ViewPageOneActivity extends BaseActivity implements
 				try {
 					ResultOfListOfTQuote queteByID = WebServiceManger
 							.getInstance().getSellerOperationService()
-							.getQueteByID("1", "0");
+							.getQueteByID("1", "2");
 					if (queteByID.isSuccess()) {
 						message.what = what;
 						tQuotes = queteByID.getData().getTQuote();

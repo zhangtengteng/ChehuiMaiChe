@@ -80,7 +80,9 @@ public class AccountManagerActivity extends BaseActivity implements
 					ActivityManagerAccountPersion.class);
 			break;
 		case R.id.ll_user_balance:
-			getMyBalanceRequest();
+//			getMyBalanceRequest();
+			activityManager.getInstance().startNextActivity(
+					ActivityCertifiedMerchants.class);
 			break;
 		default:
 			break;

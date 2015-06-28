@@ -20,6 +20,8 @@ import android.widget.TextView;
 
 import com.chehu.pop.PoPTimeManager;
 import com.chehui.activity.ViewPageOneActivity;
+import com.chehui.activity.ViewPageThreeActivity;
+import com.chehui.activity.ViewPageTwoActivity;
 import com.chehui.adapter.MyPagerAdapter;
 import com.chehui.ui.base.BaseFragment;
 import com.example.myproject.R;
@@ -70,10 +72,16 @@ public class MyOrderFragment extends BaseFragment implements OnClickListener {
 	private void initPagerViewer() {
 		pager = (ViewPager) getActivity().findViewById(R.id.vp_myorder);
 		final ArrayList<View> list = new ArrayList<View>();
-		Intent intent = new Intent(getActivity(), ViewPageOneActivity.class);
-		list.add(getView("0", intent));
-		Intent intent2 = new Intent(getActivity(), ViewPageOneActivity.class);
+		
+		Intent intent1 = new Intent(getActivity(), ViewPageOneActivity.class);
+		list.add(getView("0", intent1));
+		
+		Intent intent2 = new Intent(getActivity(), ViewPageTwoActivity.class);
 		list.add(getView("1", intent2));
+		
+		Intent intent3 = new Intent(getActivity(), ViewPageThreeActivity.class);
+		list.add(getView("2", intent3));
+		
 		pager.setAdapter(new MyPagerAdapter(list));
 		pager.setCurrentItem(0);
 		pager.setOnPageChangeListener(new OnPageChangeListener() {
@@ -86,6 +94,9 @@ public class MyOrderFragment extends BaseFragment implements OnClickListener {
 				}
 
 				if (position == 1) {
+					rb2.setChecked(true);
+				}
+				if (position == 2) {
 					rb3.setChecked(true);
 				}
 			}
@@ -123,16 +134,17 @@ public class MyOrderFragment extends BaseFragment implements OnClickListener {
 			break;
 		case R.id.rb3:
 			flag=1;
-			pager.setCurrentItem(1);
+			pager.setCurrentItem(2);
 			break;
 		case R.id.rb2:
-			if (flag == 0) {
-				rb1.setChecked(true);
-			}
-			if (flag == 1) {
-				rb3.setChecked(true);
-			}
-			showPopWindow();
+			pager.setCurrentItem(1);
+//			if (flag == 0) {
+//				rb1.setChecked(true);
+//			}
+//			if (flag == 1) {
+//				rb3.setChecked(true);
+//			}
+//			showPopWindow();
 			break;
 		case R.id.tv_one:
 			changePopTitle(Integer.valueOf(popTextOne.getTag().toString()));

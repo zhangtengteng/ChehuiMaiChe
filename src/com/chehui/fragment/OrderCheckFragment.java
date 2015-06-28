@@ -133,10 +133,11 @@ public class OrderCheckFragment extends BaseFragment implements
 				try {
 					ResultOfListOfTOrder orderByBrands = WebServiceManger
 							.getInstance().getSellerOperationService()
-							.getOrderByBrands("1", "2", "3");
+							.getOrderByBrands("1", "2", "3","");
 					if (orderByBrands.isSuccess()) {
 						message.what = what;
 						tOrder = orderByBrands.getData().getTOrder();
+						System.out.println("++++++++++++++++++++++++=tOrder="+tOrder.size());
 					} else {
 						message.what = CommonData.HTTP_HANDLE_FAILE;
 						message.obj = orderByBrands.getMess();
@@ -152,17 +153,10 @@ public class OrderCheckFragment extends BaseFragment implements
 
 	private void onGetOrderResponse() {
 		if (orderDetail != null) {
-			 
-//			String str=orderDetail.getState()+"|"+orderDetail.getDdbh()+"|"+orderDetail.get
-
 			 Intent intent = new Intent(getActivity().getApplicationContext(),OrderDetailActivity2.class);
 			 intent.putExtra("orderDetail", (Serializable) orderDetail);
 			 startActivity(intent);
-			 
-			 
-
 		}
-
 	}
 
 	private void init() {
@@ -228,7 +222,7 @@ public class OrderCheckFragment extends BaseFragment implements
 				try {
 					ResultOfListOfTOrder orderByID = WebServiceManger
 							.getInstance().getSellerOperationService()
-							.getOrderByID(String.valueOf(orderId));
+							.getOrderByID(String.valueOf(orderId),"");
 					if (orderByID.isSuccess()) {
 						orderDetail = orderByID.getData().getTOrder().get(0);
 						message.what = CommonData.HTTP_HANDLE_SUCCESS;

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import chehui.maichetong.selleroperationservice.TOrder;
 
@@ -82,14 +83,16 @@ public class OrderAdapter extends BaseAdapter {
 			
 		TextView title = (TextView) convertView.findViewById(R.id.tv_order_title);
 		TextView expectPrice = (TextView) convertView.findViewById(R.id.tv_expect_price);
+		ImageView state = (ImageView) convertView.findViewById(R.id.tv_order_state);
 		//订单编号改成付款方式
 		TextView orderNumber = (TextView) convertView.findViewById(R.id.tv_order_number);
-		orderNumber.setText(tOrder.getPayMode());
+//		orderNumber.setText(tOrder.getPayMode());
+		orderNumber.setText("你的返利：300￥");
 		
 		TextView time = (TextView) convertView.findViewById(R.id.tv_order_time);
 		
 		title.setText(tOrder.getSeriesName()+tOrder.getCarName());
-		expectPrice.setText("期望价："+tOrder.getInsurancePrice());
+		expectPrice.setText("裸车价格："+tOrder.getInsurancePrice()+"元+￥500（车惠加价）");
 		
 		String begindateStr = tOrder.getBegindateStr();
 		
@@ -98,7 +101,11 @@ public class OrderAdapter extends BaseAdapter {
 		}else{
 			time.setText(begindateStr);
 		}
-		
+		if(tOrder.isIsBaojia()){
+			state.setBackground(context.getResources().getDrawable(R.drawable.isok));
+		}else{
+			state.setBackground(context.getResources().getDrawable(R.drawable.wait_ok));
+		}
 		return convertView;
 	}
 }

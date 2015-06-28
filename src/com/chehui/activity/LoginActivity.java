@@ -133,7 +133,9 @@ public class LoginActivity extends BaseActivity {
 
 	private void init() {
 		username = (TextView) findViewById(R.id.et_userName);
+		username.setText("18021832061");
 		pwd = (TextView) findViewById(R.id.et_pwd);
+		pwd.setText("888888");
 		btnLogin = (Button) findViewById(R.id.btn_login);
 		btnLogin.setOnClickListener(new OnClickListener() {
 

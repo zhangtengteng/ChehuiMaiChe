@@ -41,6 +41,7 @@
             android:launchMode="singleInstance" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -90,6 +91,10 @@
         </activity>
         <activity android:name="com.chehui.activity.ViewPageOneActivity" >
         </activity>
+        <activity android:name="com.chehui.activity.ViewPageTwoActivity" >
+        </activity>
+        <activity android:name="com.chehui.activity.ViewPageThreeActivity" >
+        </activity>
         <activity android:name="com.chehui.activity.ActivityManagerAccountPersion" >
         </activity>
         <activity android:name="com.chehui.activity.ActivityManagerAccountWallet1" >
@@ -113,6 +118,16 @@
         <activity android:name="com.chehui.activity.ActivityManagerAccountAddBank3" >
         </activity>
         <activity android:name="com.chehui.activity.XunJiaActivity" >
+        </activity>
+        <activity android:name="com.chehui.activity.ActivityCertifiedMerchants" >
+        </activity>
+        <activity android:name="com.chehui.activity.ActivityOrderDetailOk" >
+        </activity>
+        <activity android:name="com.chehui.activity.ActivityCertifiedMerchants2" >
+        </activity>
+        <activity android:name="com.chehui.activity.ActivityCertifiedMerchants3" >
+        </activity>
+        <activity android:name="com.chehui.activity.ActivityCertifiedMerchants4" >
         </activity>
         <!-- 个推SDK配置开始 -->
 

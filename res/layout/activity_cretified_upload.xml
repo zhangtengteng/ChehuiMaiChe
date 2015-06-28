@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical" >
-
+<include 
+    layout="@layout/top_title"
+    />
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
@@ -27,20 +29,18 @@
             android:textSize="15sp" />
 		
         <ImageView
+            android:id="@+id/iv1"
             android:layout_marginLeft="50dp"
             android:layout_width="60dp"
             android:layout_height="fill_parent"
             android:background="@drawable/car" />
 
         <ImageView
+            android:id="@+id/iv2"
             android:layout_width="60dp"
             android:layout_height="fill_parent"
             android:background="@drawable/car" />
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="fill_parent"
-            android:background="@drawable/car" />
     </LinearLayout>
 
     <View
